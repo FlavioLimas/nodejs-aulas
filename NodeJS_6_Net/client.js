@@ -16,3 +16,7 @@ process.stdin.on('readable',function(){
 	message = message.toString().replace(/\n/,'');
 	client.write(message);
 });
+// Detectando e finalizando o processo
+client.on('end', function(){
+	process.exit();
+});
